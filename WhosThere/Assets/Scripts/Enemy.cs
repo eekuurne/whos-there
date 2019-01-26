@@ -12,6 +12,7 @@ public class Enemy : Character {
     void Start() {
         characterAnimation = GetComponent<CharacterAnimation>();
         InitNavMeshAgent();
+        InitCharacter();
     }
 
     void InitNavMeshAgent() {

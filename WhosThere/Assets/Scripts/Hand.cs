@@ -5,12 +5,12 @@ using UnityEngine;
 public class Hand : MonoBehaviour {
 
     [SerializeField] GameObject gun;
+    [SerializeField] Transform projectileSpawn;
+    [SerializeField] Projectile projectile;
+    [SerializeField] Character owner;
 
-    void Start() {
-        
-    }
-
-    void Update() {
-        
+    public void Shoot() {
+        Projectile newProjectile = Instantiate(projectile, projectileSpawn.position, projectileSpawn.rotation) as Projectile;
+        newProjectile.SetShooter(owner);
     }
 }
