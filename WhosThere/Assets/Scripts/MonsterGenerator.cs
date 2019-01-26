@@ -57,9 +57,9 @@ public class MonsterGenerator : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSecondsRealtime(timeBetweenMonsters);
             Vector3 obstaclePosition = GetMonsterPosition();
             InstantiateMonster(obstaclePosition);
+            yield return new WaitForSecondsRealtime(timeBetweenMonsters);
         }
     }
 
