@@ -45,6 +45,7 @@ public class HomeManager : MonoBehaviour
 
     void PauseGame()
     {
+
         Time.timeScale = 0;
         // Show Pause Screen
         Debug.Log("PAUSE");
