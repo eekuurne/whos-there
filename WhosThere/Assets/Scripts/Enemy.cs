@@ -27,7 +27,6 @@ public class Enemy : Character {
     protected void HandleMovement() {
         if (moveTarget != null) {
             agent.SetDestination(moveTarget.transform.position);
-            Debug.Log(agent.destination);
         }
         if (agent.remainingDistance > agent.stoppingDistance) {
             characterAnimation.Move(agent.desiredVelocity, false, false);

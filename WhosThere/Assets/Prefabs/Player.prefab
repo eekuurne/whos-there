@@ -49,12 +49,12 @@ MonoBehaviour:
   startingHealth: 5
   playerCamera: {fileID: 6913226801685448279}
   movementSpeed: 5
-  XSensitivity: 1
-  YSensitivity: 1
+  XSensitivity: 0.5
+  YSensitivity: 0.5
   clampVerticalRotation: 1
   MinimumX: -90
   MaximumX: 90
-  cameraSmoothing: 5
+  cameraSmoothing: 2
   lockCursor: 1
 --- !u!54 &6913226801485764262
 Rigidbody:
