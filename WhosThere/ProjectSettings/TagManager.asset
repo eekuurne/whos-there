@@ -19,7 +19,7 @@ TagManager:
   - CharacterCollider
   - HitboxCollider
   - Projectile
-  - 
+  - Ragdoll
   - 
   - 
   - 
