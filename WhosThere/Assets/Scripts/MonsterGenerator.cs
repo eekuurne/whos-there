@@ -9,7 +9,7 @@ public class MonsterGenerator : MonoBehaviour
     public Transform[] SpawnPoints;
     public GameObject player;
 
-    [SerializeField] float timeBetweenMonsters = 1f;
+    float timeBetweenMonsters;
 
     IEnumerator coroutine;
 
@@ -32,9 +32,9 @@ public class MonsterGenerator : MonoBehaviour
         Clear();
     }
 
-    public void SetTimeBetweenMonsters(float nTimeBetweenMonsters)
+    public void SetTimeBetweenMonsters(float time)
     {
-        timeBetweenMonsters = nTimeBetweenMonsters;
+        timeBetweenMonsters = time;
     }
 
     public void Clear()
