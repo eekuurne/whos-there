@@ -14,6 +14,7 @@ public class Player : Character {
     [SerializeField] float MaximumX = 90F;
     [SerializeField] float cameraSmoothing = 5f;
     [SerializeField] bool lockCursor = true;
+    [SerializeField] float shootingCooldown = 0.5f;
 
     Quaternion characterTargetRotation;
     Quaternion cameraTargetRotation;
@@ -30,6 +31,10 @@ public class Player : Character {
 
     void Update() {
         LookRotation();
+
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            Shoot();
+        }
     }
 
     void FixedUpdate() {
@@ -91,5 +96,9 @@ public class Player : Character {
         q.x = Mathf.Tan(0.5f * Mathf.Deg2Rad * angleX);
 
         return q;
+    }
+
+    void Shoot() {
+        
     }
 }
