@@ -7,10 +7,7 @@ public class HomeManager : MonoBehaviour
 {
     [SerializeField] GameObject Monsters;
     [SerializeField] GameObject UI;
-
-    [SerializeField] float TimeBeforeFirstMonster = 1f;
-    [SerializeField] float TimeBetweenMonstersBeginning = 10f;
-    [SerializeField] float TimeBetweenMonstersEnd = 5f;
+    [SerializeField] float TimeBeforeFirstMonster;
     MonsterGenerator monsterGenerator;
 
     public float GameSessionTime = 15f;
@@ -43,18 +40,9 @@ public class HomeManager : MonoBehaviour
         monsterGenerator.StopGeneratingMonsters();
     }
 
-    IEnumerator SessionTimer( )
+    IEnumerator SessionTimer()
     {
-        float elapsedTime = 0;
-        while(elapsedTime < GameSessionTime)
-        {
-            elapsedTime += 1;
-            yield return new WaitForSecondsRealtime(1.0f);
-
-            var timeDivider = elapsedTime / GameSessionTime;
-            var timeBeforeNextMonster = Mathf.Lerp(TimeBetweenMonstersBeginning, TimeBetweenMonstersEnd, timeDivider);
-            monsterGenerator.SetTimeBetweenMonsters(timeBeforeNextMonster);
-        }
+        yield return new WaitForSecondsRealtime(GameSessionTime);
         Debug.Log("TIME IS UP");
         Debug.Log("RESTART THE GAME BY PRESSING R");
         StopGame();
