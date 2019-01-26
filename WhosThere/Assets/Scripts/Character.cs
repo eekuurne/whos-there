@@ -10,6 +10,11 @@ public class Character : MonoBehaviour {
 
     int healthRemaining;
 
+    public int GetHealth()
+    {
+        return healthRemaining;
+    }
+
     protected void InitCharacter() {
         healthRemaining = startingHealth;
     }
