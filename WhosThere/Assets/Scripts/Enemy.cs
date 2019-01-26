@@ -12,6 +12,7 @@ public class Enemy : Character {
 
     void Start() {
         characterAnimation = GetComponent<CharacterAnimation>();
+        moveTarget = FindObjectOfType<Player>().gameObject;
         InitNavMeshAgent();
         InitCharacter();
     }
@@ -38,7 +39,6 @@ public class Enemy : Character {
     }
 
     public override void Die(Transform attacker) {
-        Debug.Log("Character died!");
         dead = true;
         Instantiate(ragdollCorpse, transform.position, transform.rotation);
         gameObject.SetActive(false);

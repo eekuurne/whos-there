@@ -5,24 +5,23 @@ using UnityEngine;
 public class Hand : MonoBehaviour {
 
     [SerializeField] GameObject gun;
-    [SerializeField] Transform projectileSpawn;
-    [SerializeField] Projectile projectile;
     [SerializeField] Character owner;
 
+    [SerializeField] int shootingDamage = 1;
+
     public void Shoot() {
-        /*
-        // Layermask for layers 10 ("Clickable") and 11 ("Target")
-        int layerMask = (1 << 10) | (1 << 11);
+        // Layermask for layers 10 ("HitboxCollider") and 13 ("BreakableObject")
+        int layerMask = (1 << 10) | (1 << 13);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask)) {
-            if (hit.transform.tag == "Ground") {
-                player.MoveToRaycastHit(hit);
-            } else if (hit.transform.tag == "Enemy") {
-                player.AttackToRaycastHit(hit);
-            } else if (hit.transform.tag == "StartButton") {
-                player.PressStartButton(hit);
+            Enemy damageableObject = hit.transform.GetComponent<Enemy>();
+            if (damageableObject != null && hit.transform.gameObject.layer == 10) {
+                // Play bullet hitting enemy sound
+                damageableObject.TakeDamage(shootingDamage, owner.transform);
+            } else if (damageableObject != null && hit.transform.gameObject.layer == 13) {
+                // Destroy breakable object
             }
-        }*/
+        }
     }
 }

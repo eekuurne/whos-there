@@ -7,7 +7,7 @@ public class MonsterGenerator : MonoBehaviour
 {
     public Enemy[] Monsters;
     public Transform[] SpawnPoints;
-    public GameObject Player;
+    public GameObject player;
 
     [SerializeField] float timeBetweenMonsters = 1f;
 
@@ -49,7 +49,7 @@ public class MonsterGenerator : MonoBehaviour
     {
         var monsterIndex = UnityEngine.Random.Range(0, Monsters.Length);
         Enemy newMonster = Instantiate(Monsters[monsterIndex], obstaclePos, Quaternion.identity) as Enemy;
-        newMonster.moveTarget = Player;
+        newMonster.moveTarget = player;
         newMonster.transform.parent = this.transform;
     }
 
