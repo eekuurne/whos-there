@@ -11,17 +11,19 @@ public class Enemy : Character {
     public GameObject moveTarget;
     public RagdollCorpse ragdollCorpse;
     public float AttackRange = 10;
-    IEnumerator attack;
     IEnumerator attackLoop;
+
+    float attackCooldown = 2f;
+    float nextAttack;
 
     void Start() {
         characterAnimation = GetComponent<CharacterAnimation>();
         moveTarget = FindObjectOfType<Player>().gameObject;
         InitNavMeshAgent();
         InitCharacter();
-        attack = Attack();
-        attackLoop = AttackLoop();
-        StartCoroutine(attackLoop);
+        //attackLoop = AttackLoop();
+        //StartCoroutine(attackLoop);
+        nextAttack = Time.time;
     }
 
     void InitNavMeshAgent() {
@@ -32,22 +34,44 @@ public class Enemy : Character {
 
     void Update() {
         HandleMovement();
+
+        if (IsPlayerWithinRange() && Time.time > nextAttack) {
+            StartCoroutine(MeleeAttack(1f));
+        }
     }
 
     IEnumerator AttackLoop()
     {
-        while(IsPlayerDead() != false)
+        while(true)
         {
-            yield return new WaitForSecondsRealtime(1.0f);
-            if (IsPlayerWithinRange())
+            yield return new WaitForSeconds(0.2f);
+            if (IsPlayerWithinRange() && Time.time > nextAttack)
             {
-                StartCoroutine(attack);
+                Debug.Log("AttackCoroutine starts!");
+                nextAttack = Time.time + attackCooldown;
+                Debug.Log(nextAttack);
+                agent.isStopped = true;
+                // animation.Play();
+                float animDuration = 1f;
+                yield return new WaitForSeconds(animDuration);
+                moveTarget.GetComponent<Player>().TakeDamage(1, transform);
+                agent.isStopped = false;
             }
             if (IsPlayerDead())
             {
                 StopAttackLoop();
             }
         }
+    }
+
+    IEnumerator MeleeAttack(float animationTime) {
+        Debug.Log("AttackCoroutine starts!");
+        nextAttack = Time.time + attackCooldown;
+        agent.isStopped = true;
+        // animation.Play();
+        yield return new WaitForSeconds(animationTime);
+        moveTarget.GetComponent<Player>().TakeDamage(1, transform);
+        agent.isStopped = false;
     }
 
     private bool IsPlayerDead( )
@@ -60,23 +84,9 @@ public class Enemy : Character {
         StopCoroutine(attackLoop);
     }
 
-    IEnumerator Attack( )
-    {
-        agent.isStopped = true;
-        // animation.Play();
-        float animDuration = 1f;
-        yield return new WaitForSecondsRealtime(animDuration);
-        moveTarget.GetComponent<Player>().TakeDamage(1, transform);
-    }
-
-    private void StopAttack()
-    {
-        StopCoroutine(attack);
-    }
-
     bool IsPlayerWithinRange()
     {
-        return Vector3.Distance(moveTarget.transform.position,transform.position) < AttackRange;
+        return Vector3.Distance(moveTarget.transform.position, transform.position) < AttackRange;
     }
 
     protected void HandleMovement() {
