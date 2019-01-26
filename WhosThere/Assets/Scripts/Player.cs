@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Character {
 
     [SerializeField] Transform playerCamera;
+    [SerializeField] Hand hand;
 
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float XSensitivity = 1f;
@@ -27,6 +28,7 @@ public class Player : Character {
         cameraTargetRotation = playerCamera.localRotation;
         m_cursorIsLocked = lockCursor;
         InternalLockUpdate();
+        InitCharacter();
     }
 
     void Update() {
@@ -99,6 +101,6 @@ public class Player : Character {
     }
 
     void Shoot() {
-        
+        hand.Shoot();
     }
 }

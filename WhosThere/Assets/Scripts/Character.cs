@@ -10,12 +10,13 @@ public class Character : MonoBehaviour {
 
     int healthRemaining;
 
-    void Start() {
+    protected void InitCharacter() {
         healthRemaining = startingHealth;
     }
 
-    public virtual void TakeDamage(int damage) {
+    public virtual void TakeDamage(int damage, Transform shooter) {
         healthRemaining -= damage;
+        Debug.Log("Hit character. Health remaining: " + healthRemaining);
         if (healthRemaining <= 0 && !dead) {
             Die();
         }
@@ -23,5 +24,6 @@ public class Character : MonoBehaviour {
 
     public virtual void Die() {
         Debug.Log("Character died!");
+        dead = true;
     }
 }
