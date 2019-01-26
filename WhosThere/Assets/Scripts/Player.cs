@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : Character {
+
+    [SerializeField] Transform playerCamera;
 
     [SerializeField] float movementSpeed = 5f;
-    [SerializeField] Transform playerCamera;
     [SerializeField] float XSensitivity = 1f;
     [SerializeField] float YSensitivity = 1f;
     [SerializeField] bool clampVerticalRotation = true;
     [SerializeField] float MinimumX = -90F;
     [SerializeField] float MaximumX = 90F;
-    [SerializeField] float smoothTime = 5f;
+    [SerializeField] float cameraSmoothing = 5f;
     [SerializeField] bool lockCursor = true;
 
-    Quaternion m_CharacterTargetRot;
-    Quaternion m_CameraTargetRot;
+    Quaternion characterTargetRotation;
+    Quaternion cameraTargetRotation;
     bool m_cursorIsLocked = true;
     Rigidbody rb;
 
     void Start() {
         rb = GetComponent<Rigidbody>();
-        m_CharacterTargetRot = transform.localRotation;
-        m_CameraTargetRot = playerCamera.localRotation;
+        characterTargetRotation = transform.localRotation;
+        cameraTargetRotation = playerCamera.localRotation;
         m_cursorIsLocked = lockCursor;
         InternalLockUpdate();
     }
@@ -34,7 +35,6 @@ public class Player : MonoBehaviour {
     void FixedUpdate() {
         Vector3 move = MovementVector();
 
-        // Normalized movement amount
         if (move.magnitude > 1) {
             move = move.normalized;
         }
@@ -55,14 +55,14 @@ public class Player : MonoBehaviour {
         float yRot = Input.GetAxis("Mouse X") * XSensitivity;
         float xRot = Input.GetAxis("Mouse Y") * YSensitivity;
 
-        m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
-        m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
+        characterTargetRotation *= Quaternion.Euler(0f, yRot, 0f);
+        cameraTargetRotation *= Quaternion.Euler(-xRot, 0f, 0f);
 
         if (clampVerticalRotation)
-            m_CameraTargetRot = ClampRotationAroundXAxis(m_CameraTargetRot);
+            cameraTargetRotation = ClampRotationAroundXAxis(cameraTargetRotation);
 
-        transform.rotation = Quaternion.Slerp(transform.localRotation, m_CharacterTargetRot, smoothTime);
-        playerCamera.localRotation = Quaternion.Slerp(playerCamera.localRotation, m_CameraTargetRot, smoothTime);
+        transform.rotation = Quaternion.Slerp(transform.localRotation, characterTargetRotation, cameraSmoothing);
+        playerCamera.localRotation = Quaternion.Slerp(playerCamera.localRotation, cameraTargetRotation, cameraSmoothing);
     }
 
     public void HideCursor(bool value) {
