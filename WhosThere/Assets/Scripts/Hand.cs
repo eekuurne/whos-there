@@ -10,7 +10,19 @@ public class Hand : MonoBehaviour {
     [SerializeField] Character owner;
 
     public void Shoot() {
-        Projectile newProjectile = Instantiate(projectile, projectileSpawn.position, projectileSpawn.rotation) as Projectile;
-        newProjectile.SetShooter(owner);
+        /*
+        // Layermask for layers 10 ("Clickable") and 11 ("Target")
+        int layerMask = (1 << 10) | (1 << 11);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask)) {
+            if (hit.transform.tag == "Ground") {
+                player.MoveToRaycastHit(hit);
+            } else if (hit.transform.tag == "Enemy") {
+                player.AttackToRaycastHit(hit);
+            } else if (hit.transform.tag == "StartButton") {
+                player.PressStartButton(hit);
+            }
+        }*/
     }
 }

@@ -8,6 +8,7 @@ public class Enemy : Character {
     public CharacterAnimation characterAnimation { get; private set; }
 
     public GameObject moveTarget;
+    public RagdollCorpse ragdollCorpse;
 
     void Start() {
         characterAnimation = GetComponent<CharacterAnimation>();
@@ -34,5 +35,12 @@ public class Enemy : Character {
         } else {
             characterAnimation.Move(Vector3.zero, false, false);
         }
+    }
+
+    public override void Die(Transform attacker) {
+        Debug.Log("Character died!");
+        dead = true;
+        Instantiate(ragdollCorpse, transform.position, transform.rotation);
+        gameObject.SetActive(false);
     }
 }

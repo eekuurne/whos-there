@@ -6,7 +6,7 @@ public class Character : MonoBehaviour {
 
     [SerializeField] int startingHealth = 5;
 
-    bool dead = false;
+    protected bool dead = false;
 
     int healthRemaining;
 
@@ -14,15 +14,15 @@ public class Character : MonoBehaviour {
         healthRemaining = startingHealth;
     }
 
-    public virtual void TakeDamage(int damage, Transform shooter) {
+    public virtual void TakeDamage(int damage, Transform attacker) {
         healthRemaining -= damage;
         Debug.Log("Hit character. Health remaining: " + healthRemaining);
         if (healthRemaining <= 0 && !dead) {
-            Die();
+            Die(attacker);
         }
     }
 
-    public virtual void Die() {
+    public virtual void Die(Transform attacker) {
         Debug.Log("Character died!");
         dead = true;
     }
