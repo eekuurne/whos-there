@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 1
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 65079ac50101149cc891902658279abd, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c302d561ac4d14fd7b048b4ee5e9aa2e, type: 2}
 --- !u!4 &400000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2b127815fd0f2074eae3a0c6a4786d0b,
@@ -237,12 +237,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2b127815fd0f2074eae3a0c6a4786d0b,
     type: 3}
   m_PrefabInstance: {fileID: 968631155}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &61962910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6913226801485764248, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
-    type: 3}
-  m_PrefabInstance: {fileID: 6913226801480576006}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &165296292
 PrefabInstance:
@@ -562,6 +556,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2b127815fd0f2074eae3a0c6a4786d0b,
     type: 3}
   m_PrefabInstance: {fileID: 784858106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &314241002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3447731522046256345, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6913226801480576006}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &317217364
 PrefabInstance:
@@ -2281,7 +2281,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 61962910}
+      objectReference: {fileID: 314241002}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eecf978fd513143a091bb2a364dde918, type: 3}
 --- !u!1001 &6848613654369715326
@@ -2294,7 +2294,7 @@ PrefabInstance:
     - target: {fileID: 6848613655248476001, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
         type: 3}
       propertyPath: m_Name
-      value: Timer
+      value: HomeManager
       objectReference: {fileID: 0}
     - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
         type: 3}
@@ -2428,10 +2428,6 @@ PrefabInstance:
     - target: {fileID: 6913226801485764249, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1999286159, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7, type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
