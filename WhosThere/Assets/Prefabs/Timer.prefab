@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monsters: {fileID: 0}
+  UI: {fileID: 0}
   TimeBeforeFirstMonster: 2
+  GameSessionTime: 30

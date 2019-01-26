@@ -47,4 +47,5 @@ MonoBehaviour:
   - {fileID: 1861008537896851668, guid: 10001dffbd3f84684bf0a6f386ccc012, type: 3}
   SpawnPoints:
   - {fileID: 0}
+  Player: {fileID: 0}
   timeBetweenMonsters: 5
