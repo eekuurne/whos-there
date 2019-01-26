@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class MonsterGenerator : MonoBehaviour
 {
-    public GameObject[] Monsters;
+    public Enemy[] Monsters;
     public Transform[] SpawnPoints;
-    public Camera PlayerCamera;
+    public GameObject Player;
 
-    float timeBetweenMonsters = 5f;
+    [SerializeField] float timeBetweenMonsters = 1f;
 
     IEnumerator coroutine;
 
     // Use this for initialization
     void Start()
     {
-        coroutine = InstantiateMonster();
+        coroutine = MonsterLoop();
     }
 
     public void StartGeneratingMonsters()
@@ -45,20 +45,21 @@ public class MonsterGenerator : MonoBehaviour
         }
     }
 
-    void InstantieteMonster(Vector3 obstaclePos)
+    void InstantiateMonster(Vector3 obstaclePos)
     {
-        var obstacleIndex = UnityEngine.Random.Range(0, Monsters.Length);
-        var newMonster = Instantiate(Monsters[obstacleIndex], obstaclePos, Quaternion.identity);
+        var monsterIndex = UnityEngine.Random.Range(0, Monsters.Length);
+        Enemy newMonster = Instantiate(Monsters[monsterIndex], obstaclePos, Quaternion.identity) as Enemy;
+        newMonster.moveTarget = Player;
         newMonster.transform.parent = this.transform;
     }
 
-    IEnumerator InstantiateMonster()
+    IEnumerator MonsterLoop()
     {
         while (true)
         {
             yield return new WaitForSecondsRealtime(timeBetweenMonsters);
             Vector3 obstaclePosition = GetMonsterPosition();
-            InstantieteMonster(obstaclePosition);
+            InstantiateMonster(obstaclePosition);
         }
     }
 

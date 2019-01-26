@@ -7,7 +7,7 @@ public class Enemy : Character {
     public UnityEngine.AI.NavMeshAgent agent { get; private set; }
     public CharacterAnimation characterAnimation { get; private set; }
 
-    [SerializeField] GameObject moveTarget;
+    public GameObject moveTarget;
 
     void Start() {
         characterAnimation = GetComponent<CharacterAnimation>();
