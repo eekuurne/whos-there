@@ -20,7 +20,7 @@ public class UIManagerScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("SceneWithOverlay");
+        SceneManager.LoadScene("StartScene");
     }
 
     
