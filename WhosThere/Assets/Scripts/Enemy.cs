@@ -16,11 +16,15 @@ public class Enemy : Character {
     float attackCooldown = 2f;
     float nextAttack;
 
+    AudioSource Sound;
+    public AudioClip[] Hitted;
+
     void Start() {
         characterAnimation = GetComponent<CharacterAnimation>();
         moveTarget = FindObjectOfType<Player>().gameObject;
         InitNavMeshAgent();
         InitCharacter();
+        Sound = gameObject.AddComponent<AudioSource>();
         //attackLoop = AttackLoop();
         //StartCoroutine(attackLoop);
         nextAttack = Time.time;
@@ -42,6 +46,9 @@ public class Enemy : Character {
 
     public override void TakeDamage(int damage, Transform attacker)
     {
+        Sound.clip = Hitted[UnityEngine.Random.Range(0, Hitted.Length)];
+        Sound.Play();
+
         Vector3 forceDirection = (transform.position - attacker.position + Vector3.up).normalized;
         GetComponent<Rigidbody>().AddForce(forceDirection * 1200);
         StartCoroutine(ApplyPoke(0.25f, GetComponent<Rigidbody>(), 500, forceDirection, transform));
