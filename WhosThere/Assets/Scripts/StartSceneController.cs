@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class StartSceneController : MonoBehaviour
 {
-    public float sceneDisplayTime = 30f;
+    public float sceneDisplayTime = 20f;
     public float audioDelay = 0.5f;
     public new AudioSource audio;
 

@@ -1076,7 +1076,11 @@ GameObject:
   m_Component:
   - component: {fileID: 136610229364219237}
   - component: {fileID: 136610229364219226}
+<<<<<<< HEAD
+  - component: {fileID: 2305562072793435104}
+=======
   - component: {fileID: 1265741704052660426}
+>>>>>>> 23fcdccf53a7886a27ec146d1a64df4eb02c97c3
   m_Layer: 5
   m_Name: HandBar (Courage)
   m_TagString: Untagged
@@ -1103,8 +1107,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
+<<<<<<< HEAD
+  m_AnchoredPosition: {x: -30, y: 0}
+  m_SizeDelta: {x: 56.5, y: 239.1}
+=======
   m_AnchoredPosition: {x: -30, y: 30}
   m_SizeDelta: {x: 82, y: 347.3}
+>>>>>>> 23fcdccf53a7886a27ec146d1a64df4eb02c97c3
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &136610229364219226
 MonoBehaviour:
@@ -1155,7 +1164,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+<<<<<<< HEAD
+--- !u!114 &2305562072793435104
+=======
 --- !u!114 &1265741704052660426
+>>>>>>> 23fcdccf53a7886a27ec146d1a64df4eb02c97c3
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
