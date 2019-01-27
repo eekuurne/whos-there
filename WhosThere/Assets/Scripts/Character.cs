@@ -8,7 +8,7 @@ public class Character : MonoBehaviour {
 
     protected bool dead = false;
 
-    int healthRemaining;
+    protected int healthRemaining;
     public float PokeTime = 0.5f;
     public GameObject CharacterModel;
 
@@ -22,7 +22,6 @@ public class Character : MonoBehaviour {
     }
 
     public virtual void TakeDamage(int damage, Transform attacker) {
-        StartCoroutine(AnimatePoke(attacker));
         healthRemaining -= damage;
         Debug.Log("Hit character. Health remaining: " + healthRemaining);
         if (healthRemaining <= 0 && !dead) {
@@ -30,6 +29,7 @@ public class Character : MonoBehaviour {
         }
     }
 
+    /*
     IEnumerator AnimatePoke(Transform attacker)
     {
         var originalRotation = CharacterModel.transform.rotation;
@@ -51,6 +51,7 @@ public class Character : MonoBehaviour {
             yield return new WaitForFixedUpdate();
         }
     }
+    */
 
     public virtual void Die(Transform attacker) {
         Debug.Log("Character died!");

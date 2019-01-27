@@ -7,7 +7,6 @@ public class Enemy : Character {
 
     public UnityEngine.AI.NavMeshAgent agent { get; private set; }
     public CharacterAnimation characterAnimation { get; private set; }
-    public float PokeTime = 0.5f;
 
     public GameObject moveTarget;
     public RagdollCorpse ragdollPrefab;
@@ -40,6 +39,31 @@ public class Enemy : Character {
             StartCoroutine(MeleeAttack(1f));
         }
     }
+
+    public override void TakeDamage(int damage, Transform attacker)
+    {
+        Vector3 forceDirection = (transform.position - attacker.position + Vector3.up).normalized;
+        GetComponent<Rigidbody>().AddForce(forceDirection * 1200);
+        StartCoroutine(ApplyPoke(0.25f, GetComponent<Rigidbody>(), 500, forceDirection, transform));
+
+        healthRemaining -= damage;
+        Debug.Log("Hit character. Health remaining: " + healthRemaining);
+        if (healthRemaining <= 0 && !dead)
+        {
+            Die(attacker);
+        }
+    }
+
+    IEnumerator ApplyPoke(float duration, Rigidbody target, float forceAmount, Vector3 forceDirection, Transform victim)
+    {
+        float startTime = Time.time;
+        while (Time.time < startTime + duration)
+        {
+            target.AddForce(forceDirection * forceAmount * Time.deltaTime * 35);
+            yield return null;
+        }
+    }
+
     IEnumerator AttackLoop()
     {
         while(true)
@@ -68,7 +92,7 @@ public class Enemy : Character {
         Debug.Log("AttackCoroutine starts!");
         nextAttack = Time.time + attackCooldown;
         agent.isStopped = true;
-        // animation.Play();
+        GetComponent<Animator>().SetTrigger("Attack");
         yield return new WaitForSeconds(animationTime);
         moveTarget.GetComponent<Player>().TakeDamage(1, transform);
         agent.isStopped = false;
