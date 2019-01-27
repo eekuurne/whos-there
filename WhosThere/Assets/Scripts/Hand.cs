@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,5 +28,31 @@ public class Hand : MonoBehaviour {
 
     public void HandPush() {
         Debug.Log("Hand push!");
+        // Layermask for layers 10 ("HitboxCollider") and 13 ("BreakableObject")
+        int layerMask = (1 << 10) | (1 << 13);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+
+        Collider[] enemies =Physics.OverlapSphere(gun.transform.position, 180f, layerMask);
+        foreach(Collider collider in enemies)
+        {
+            Enemy damageableObject = collider.gameObject.GetComponent<Enemy>();
+            
+
+            if (damageableObject != null && collider.transform.gameObject.layer == 10)
+            {
+                // Play bullet hitting enemy sound
+                Vector3 forceDirection = (damageableObject.transform.position - owner.transform.position + Vector3.up).normalized; 
+                StartCoroutine(damageableObject.ApplyPoke(0.25f, damageableObject.GetComponent<Rigidbody>(), 500, forceDirection, damageableObject.transform));
+
+            }
+            else if (damageableObject != null && collider.transform.gameObject.layer == 13)
+            {
+                // Destroy breakable object
+            }
+        }
     }
+
+    
 }

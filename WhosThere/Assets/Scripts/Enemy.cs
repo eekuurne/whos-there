@@ -54,7 +54,7 @@ public class Enemy : Character {
         }
     }
 
-    IEnumerator ApplyPoke(float duration, Rigidbody target, float forceAmount, Vector3 forceDirection, Transform victim)
+    public IEnumerator ApplyPoke(float duration, Rigidbody target, float forceAmount, Vector3 forceDirection, Transform victim)
     {
         float startTime = Time.time;
         while (Time.time < startTime + duration)
