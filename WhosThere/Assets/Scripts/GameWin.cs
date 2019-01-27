@@ -16,7 +16,7 @@ public class GameWin : MonoBehaviour
     {
 
         hm.PauseMenu.SetActive(false);
-        hm.HUD.SetActive(false);
+        hm.HUD.SetActive(false); 
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             SceneManager.LoadScene("Menu");

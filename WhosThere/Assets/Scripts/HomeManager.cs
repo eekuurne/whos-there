@@ -31,6 +31,7 @@ public class HomeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       GameSessionTime =  GameSessionTime * 1.01f;
         monsterGenerator = Monsters.GetComponent<MonsterGenerator>();
         startGeneratingMonsters = StartGeneratingMonsters();
         sessionTimer = SessionTimer();
