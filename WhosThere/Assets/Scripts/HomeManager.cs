@@ -69,6 +69,8 @@ public class HomeManager : MonoBehaviour
     public void ResumeGame()
     {
         isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         Time.timeScale = 1;
         Debug.Log("RESUME");
     }
