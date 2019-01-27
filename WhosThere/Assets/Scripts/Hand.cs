@@ -24,4 +24,8 @@ public class Hand : MonoBehaviour {
             }
         }
     }
+
+    public void HandPush() {
+        Debug.Log("Hand push!");
+    }
 }

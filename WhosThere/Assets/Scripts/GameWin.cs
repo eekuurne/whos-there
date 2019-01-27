@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameWin : MonoBehaviour
 {
+    HomeManager hm;
+
+    void Start()
+    {
+        hm = GameObject.Find("HomeManager").GetComponent<HomeManager>(); 
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        hm.PauseMenu.SetActive(false);
+        hm.HUD.SetActive(false); 
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             SceneManager.LoadScene("Menu");
         }

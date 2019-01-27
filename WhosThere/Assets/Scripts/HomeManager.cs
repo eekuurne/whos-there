@@ -16,6 +16,12 @@ public class HomeManager : MonoBehaviour
     MonsterGenerator monsterGenerator;
 
     public float GameSessionTime = 15f;
+    public GameObject PauseMenu;
+    public GameObject WinOverlay;
+    public GameObject LoseOverlay;
+    public GameObject HUD;
+    public GameObject Timer;
+    public bool isPaused = false;
 
     IEnumerator startGeneratingMonsters;
     IEnumerator sessionTimer;
@@ -25,6 +31,7 @@ public class HomeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       GameSessionTime =  GameSessionTime * 1.01f;
         monsterGenerator = Monsters.GetComponent<MonsterGenerator>();
         startGeneratingMonsters = StartGeneratingMonsters();
         sessionTimer = SessionTimer();
@@ -52,14 +59,16 @@ public class HomeManager : MonoBehaviour
 
     void PauseGame()
     {
-
+        isPaused = true;
         Time.timeScale = 0;
         // Show Pause Screen
+        PauseMenu.SetActive(true); 
         Debug.Log("PAUSE");
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
+        isPaused = false;
         Time.timeScale = 1;
         Debug.Log("RESUME");
     }
@@ -69,25 +78,31 @@ public class HomeManager : MonoBehaviour
         float elapsedTime = 0;
         while(elapsedTime < GameSessionTime)
         {
-            elapsedTime += 1;
-            yield return new WaitForSecondsRealtime(1.0f);
 
-            var timeDivider = elapsedTime / GameSessionTime;
-            var timeBeforeNextMonster = Mathf.Lerp(TimeBetweenMonstersBeginning, TimeBetweenMonstersEnd, timeDivider);
-            monsterGenerator.SetTimeBetweenMonsters(timeBeforeNextMonster);
+                if (!isPaused) { elapsedTime += 1; }
+                yield return new WaitForSecondsRealtime(1.0f);
 
-            if (kid.GetHealth() == 0)
-            {
-                // Show Lose screen
-                StopGame();
-                Debug.Log("YOU LOSE");
-            }
+                var timeDivider = elapsedTime / GameSessionTime;
+                var timeBeforeNextMonster = Mathf.Lerp(TimeBetweenMonstersBeginning, TimeBetweenMonstersEnd, timeDivider);
+                monsterGenerator.SetTimeBetweenMonsters(timeBeforeNextMonster);
+
+                if (kid.GetHealth() == 0)
+                {
+                    // Show Lose screen
+                    LoseOverlay.SetActive(true);
+                    StopGame();
+                    Debug.Log("YOU LOSE");
+                } 
         }
         StopGame();
         Debug.Log("TIME IS UP");
         Debug.Log("YOU WON");
         Debug.Log("RESTART THE GAME BY PRESSING R");
         // Show Win Screen
+
+        WinOverlay.SetActive(true);
+        HUD.SetActive(false);
+        Timer.SetActive(false);
 
     }
 
@@ -134,19 +149,5 @@ public class HomeManager : MonoBehaviour
             target.AddForce(forceDirection * forceAmount * Time.deltaTime * 35);
             yield return null;
         }
-        StartCoroutine(FadeoutEnemy(2f, victim));
-    }
-
-    IEnumerator FadeoutEnemy(float duration, Transform victim) {
-        RagdollCorpse victimRagdoll = victim.GetComponent<RagdollCorpse>();
-        float startTime = Time.time;
-        while (Time.time < startTime + duration) {
-            victimRagdoll.ChangeToFadeMaterial();
-            Color color = victimRagdoll.fadeMaterial.color;
-            color.a = Mathf.Lerp(color.a, 0, Time.deltaTime * 5);
-            victimRagdoll.fadeMaterial.color = color;
-            yield return null;
-        }
-        Destroy(victim.gameObject);
     }
 }

@@ -50,6 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
+  PokeTime: 0.5
+  CharacterModel: {fileID: 1861008537651476918}
+  PokeTime: 0.5
   moveTarget: {fileID: 0}
   ragdollCorpse: {fileID: 8580398568270556745, guid: 2b121af303c6f450b9845ea68c4afad2,
     type: 3}
@@ -342,6 +345,12 @@ PrefabInstance:
       objectReference: {fileID: 1861008537651045812}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fa881090159c4d91993610c9119ff48, type: 3}
+--- !u!1 &1861008537651476918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 3fa881090159c4d91993610c9119ff48,
+    type: 3}
+  m_PrefabInstance: {fileID: 1861008537651445526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1861008537651045812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400034, guid: 3fa881090159c4d91993610c9119ff48,
@@ -408,15 +417,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1861008537651445526}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1861008537651045766 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400016, guid: 3fa881090159c4d91993610c9119ff48,
-    type: 3}
-  m_PrefabInstance: {fileID: 1861008537651445526}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1861008537651045778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 3fa881090159c4d91993610c9119ff48,
+    type: 3}
+  m_PrefabInstance: {fileID: 1861008537651445526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1861008537651045818 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400044, guid: 3fa881090159c4d91993610c9119ff48,
     type: 3}
   m_PrefabInstance: {fileID: 1861008537651445526}
   m_PrefabAsset: {fileID: 0}
@@ -534,9 +543,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1861008537651445526}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1861008537651045818 stripped
+--- !u!4 &1861008537651045766 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400044, guid: 3fa881090159c4d91993610c9119ff48,
+  m_CorrespondingSourceObject: {fileID: 400016, guid: 3fa881090159c4d91993610c9119ff48,
     type: 3}
   m_PrefabInstance: {fileID: 1861008537651445526}
   m_PrefabAsset: {fileID: 0}
