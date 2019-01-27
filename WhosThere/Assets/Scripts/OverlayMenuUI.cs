@@ -12,15 +12,20 @@ public class OverlayMenuUI : MonoBehaviour
 
     void Update()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         if (Input.GetKeyDown(KeyCode.Escape))
-        { 
+        {
+            Cursor.visible = false;
             gameObject.SetActive(false);
             hm.ResumeGame(); 
         }
     }
      
-    public void GoBack() { 
-       hm.ResumeGame();
+    public void GoBack() {
+        Cursor.visible = false;
+        gameObject.SetActive(false);
+        hm.ResumeGame(); 
     }
 
     public void Menu()

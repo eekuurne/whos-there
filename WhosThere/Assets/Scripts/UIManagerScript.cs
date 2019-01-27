@@ -8,14 +8,14 @@ public class UIManagerScript : MonoBehaviour
 
     private void Start()
     {
-        
+        Cursor.visible = true;
     }
-    void Update()
+
+
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Menu();
-        }
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true; 
     }
 
     public void StartGame()
