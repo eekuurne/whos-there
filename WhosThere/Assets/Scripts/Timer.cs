@@ -11,11 +11,11 @@ public class Timer : MonoBehaviour
 
 
     [SerializeField] Text timerText;
+    readonly int secondsLimit = 5;
+    readonly int startingHour = 17;
 
     float startingTime;
-    float endingTime;
-    float timeSinceStart;
-    float secondsLeft;
+    float secondsSinceStart;
 
     bool timerStarted;
     bool timerEnded;
@@ -31,20 +31,19 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (  !timerEnded)
+        if (!timerEnded)
         {
-            timeSinceStart = Time.time - startingTime; 
-            secondsLeft = 300 - timeSinceStart;
+            secondsSinceStart = Time.time - startingTime; 
 
+            timerText.text = GetTimestamp(secondsSinceStart + (startingHour * 60));
+            timerEnded |= secondsSinceStart >= secondsLimit;
 
-            timerText.text = GetTimestamp(secondsLeft);
-            if (300 - timeSinceStart < 0)
+            if (secondsSinceStart > (secondsLimit - 60))
             {
-                timerEnded = true;
-                // gameState.BuildingBlowsUp();
+                // Change color of timer text to red when 60 seconds left
+                timerText.color = UnityEngine.Color.red;
             }
         }
-        
     }
 
     public void StartTimer()
@@ -62,7 +61,7 @@ public class Timer : MonoBehaviour
         if (!timerEnded)
         {
             timerEnded = true;
-            timerText.text = "Congratulations! Time remaining: " + GetTimestamp(secondsLeft);
+            timerText.text = "Congratulations! Time remaining: " + GetTimestamp(secondsLimit - secondsSinceStart);
         }
     }
 

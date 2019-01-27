@@ -109,4 +109,37 @@ public class HomeManager : MonoBehaviour
             ResumeGame();
         }
     }
+
+    public void EnemyDies(Transform victim, Transform attacker, RagdollCorpse ragdollPrefab) {
+        victim.gameObject.SetActive(false);
+        RagdollCorpse ragdoll = Instantiate(ragdollPrefab, victim.transform.position + Vector3.up * 0.1f, victim.transform.rotation) as RagdollCorpse;
+        Rigidbody rbHead = ragdoll.head.GetComponent<Rigidbody>();
+        Rigidbody rbSpine = ragdoll.spine.GetComponent<Rigidbody>();
+        Vector3 forceDirection = (victim.transform.position - attacker.position + Vector3.up).normalized;
+        rbHead.AddForce(forceDirection * 600);
+
+        StartCoroutine(ApplyForce(0.25f, rbSpine, 250, forceDirection, victim));
+    }
+
+    IEnumerator ApplyForce(float duration, Rigidbody target, float forceAmount, Vector3 forceDirection, Transform victim) {
+        float startTime = Time.time;
+        while (Time.time < startTime + duration) {
+            target.AddForce(forceDirection * forceAmount * Time.deltaTime * 35);
+            yield return null;
+        }
+        StartCoroutine(FadeoutEnemy(2f, victim));
+    }
+
+    IEnumerator FadeoutEnemy(float duration, Transform victim) {
+        RagdollCorpse victimRagdoll = victim.GetComponent<RagdollCorpse>();
+        float startTime = Time.time;
+        while (Time.time < startTime + duration) {
+            victimRagdoll.ChangeToFadeMaterial();
+            Color color = victimRagdoll.fadeMaterial.color;
+            color.a = Mathf.Lerp(color.a, 0, Time.deltaTime * 5);
+            victimRagdoll.fadeMaterial.color = color;
+            yield return null;
+        }
+        Destroy(victim.gameObject);
+    }
 }
