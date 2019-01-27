@@ -138,9 +138,9 @@ public class HomeManager : MonoBehaviour
         Rigidbody rbHead = ragdoll.head.GetComponent<Rigidbody>();
         Rigidbody rbSpine = ragdoll.spine.GetComponent<Rigidbody>();
         Vector3 forceDirection = (victim.transform.position - attacker.position + Vector3.up).normalized;
-        rbHead.AddForce(forceDirection * 600);
+        rbHead.AddForce(forceDirection * 100);
 
-        StartCoroutine(ApplyForce(0.25f, rbSpine, 250, forceDirection, victim));
+        StartCoroutine(ApplyForce(0.25f, rbSpine, 150, forceDirection, victim));
     }
 
     IEnumerator ApplyForce(float duration, Rigidbody target, float forceAmount, Vector3 forceDirection, Transform victim) {
