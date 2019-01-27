@@ -27,12 +27,23 @@ public class HomeManager : MonoBehaviour
     IEnumerator startGeneratingMonsters;
     IEnumerator sessionTimer;
 
+    public AudioClip ThemeMusic;
+    public AudioClip Monster_Death;
+    AudioSource sound;
+    AudioSource effect;
+
     Canvas canvas;
 
     // Start is called before the first frame update
     void Start()
     {
-       GameSessionTime =  GameSessionTime * 1.01f;
+        sound = gameObject.AddComponent<AudioSource>();
+        effect = gameObject.AddComponent<AudioSource>();
+        sound.clip = ThemeMusic;
+        sound.volume = 0.5f;
+        sound.loop = true;
+        sound.playOnAwake = true;
+        GameSessionTime =  GameSessionTime * 1.01f;
         monsterGenerator = Monsters.GetComponent<MonsterGenerator>();
         startGeneratingMonsters = StartGeneratingMonsters();
         sessionTimer = SessionTimer();
@@ -137,6 +148,8 @@ public class HomeManager : MonoBehaviour
     }
 
     public void EnemyDies(Transform victim, Transform attacker, RagdollCorpse ragdollPrefab) {
+        effect.clip = Monster_Death;
+        effect.Play();
         victim.gameObject.SetActive(false);
         RagdollCorpse ragdoll = Instantiate(ragdollPrefab, victim.transform.position + Vector3.up * 0.1f, victim.transform.rotation) as RagdollCorpse;
         Rigidbody rbHead = ragdoll.head.GetComponent<Rigidbody>();

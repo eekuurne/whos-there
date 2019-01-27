@@ -480,6 +480,85 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.15983756, y: 0.0034095566, z: 0.059999987}
   m_Center: {x: -0.00004054606, y: 0.00017143771, z: 0.000000018626448}
+--- !u!1001 &335641439
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6848613655248476001, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_Name
+      value: Timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.9411983
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.164382
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.623313
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475999, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848613655248475998, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: ThemeMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 39985e433fde64fb39e4e0e120ee9f67, type: 3}
+    - target: {fileID: 6848613655248475998, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: Monster_Death
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b5e3aaf59d2746a7a2e7ff9b113ed72, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d2181ca60899b4ec4a5bc0d4eff577d9, type: 3}
 --- !u!1 &339101571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,6 +1221,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300220, guid: f073479a1d7e34e7c8e9030bbd35ecf2, type: 3}
+--- !u!1 &680350634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3447731522046256345, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1265296618}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &703754055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10742,6 +10827,41 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3447731520915698449, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+        type: 3}
+      propertyPath: Pew.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447731520915698449, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+        type: 3}
+      propertyPath: Pew.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 165f434c4e88941f791bb3d3b8a34fca, type: 3}
+    - target: {fileID: 3447731520915698449, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+        type: 3}
+      propertyPath: Pew.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: a75fc9b36d7e344e99c445eaccfe73b0, type: 3}
+    - target: {fileID: 3447731520915698449, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+        type: 3}
+      propertyPath: Pew.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e6e5ec7ad645e4da487752da5231f7cc, type: 3}
+    - target: {fileID: 3447731520915698449, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+        type: 3}
+      propertyPath: Pew.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 04bcb1249050846c1aedfea7c29c7245, type: 3}
+    - target: {fileID: 3447731520915698449, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+        type: 3}
+      propertyPath: Pew.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f1d4dd64b1c54d99b58e23f59878859, type: 3}
+    - target: {fileID: 3447731520915698449, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+        type: 3}
+      propertyPath: Pew.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: f4350be5bc6cf49d682d6a8dcdf85316, type: 3}
     - target: {fileID: 3447731522046256358, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
         type: 3}
       propertyPath: Aw.Array.size
@@ -10762,6 +10882,16 @@ PrefabInstance:
       propertyPath: Aw.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 4d571140cb6f947168cc5f37168fe54b, type: 3}
+    - target: {fileID: 3447731522046256358, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+        type: 3}
+      propertyPath: Player_Death
+      value: 
+      objectReference: {fileID: 8300000, guid: 5dff851ac29184bed936b87154c4fac6, type: 3}
+    - target: {fileID: 3447731522046256358, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7,
+        type: 3}
+      propertyPath: CharacterModel
+      value: 
+      objectReference: {fileID: 680350634}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5d3a1ff1cb1f4286aba962b8b8e54b7, type: 3}
 --- !u!1001 &1312164798

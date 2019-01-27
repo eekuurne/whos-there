@@ -23,13 +23,16 @@ public class Player : Character {
     Rigidbody rb;
 
     AudioSource Sound;
+    AudioSource Death;
     public AudioClip[] Aw;
+    public AudioClip Player_Death;
 
     void Start() {
         rb = GetComponent<Rigidbody>();
         characterTargetRotation = transform.localRotation;
         cameraTargetRotation = playerCamera.localRotation;
         Sound = gameObject.AddComponent<AudioSource>();
+        Death = gameObject.AddComponent<AudioSource>();
         m_cursorIsLocked = lockCursor;
         InternalLockUpdate();
         InitCharacter();
@@ -54,6 +57,8 @@ public class Player : Character {
         Debug.Log("Hit character. Health remaining: " + healthRemaining);
         if (healthRemaining <= 0 && !dead)
         {
+            Death.clip = Player_Death;
+            Death.Play();
             Die(attacker);
         }
     }
