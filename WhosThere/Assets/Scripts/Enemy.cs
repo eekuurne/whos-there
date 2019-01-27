@@ -9,7 +9,7 @@ public class Enemy : Character {
     public CharacterAnimation characterAnimation { get; private set; }
 
     public GameObject moveTarget;
-    public RagdollCorpse ragdollCorpse;
+    public RagdollCorpse ragdollPrefab;
     public float AttackRange = 10;
     IEnumerator attackLoop;
 
@@ -102,7 +102,6 @@ public class Enemy : Character {
 
     public override void Die(Transform attacker) {
         dead = true;
-        Instantiate(ragdollCorpse, transform.position, transform.rotation);
-        gameObject.SetActive(false);
+        FindObjectOfType<HomeManager>().EnemyDies(transform, attacker, ragdollPrefab);
     }
 }

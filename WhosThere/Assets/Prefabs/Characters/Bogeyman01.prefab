@@ -808,7 +808,7 @@ Transform:
   m_GameObject: {fileID: 1675805783}
   m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.0000001872535}
   m_LocalPosition: {x: 1, y: 0, z: 2.85}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1787124169}
   m_Father: {fileID: 0}
@@ -828,7 +828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   moveTarget: {fileID: 0}
-  ragdollCorpse: {fileID: 8580398568270556745, guid: 2b121af303c6f450b9845ea68c4afad2,
+  ragdollPrefab: {fileID: 1874472609627337408, guid: fcf1c3b0b687247e8bc1699300a30449,
     type: 3}
   AttackRange: 1.5
 --- !u!54 &1675805789
@@ -1024,7 +1024,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1787124169}
-  - component: {fileID: 1787124170}
   m_Layer: 0
   m_Name: BoogeyMan03_MELEE_ATTACK
   m_TagString: Untagged
@@ -1048,25 +1047,6 @@ Transform:
   m_Father: {fileID: 1675805791}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1787124170
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787124168}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 3fa881090159c4d91993610c9119ff48, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1818139074
 GameObject:
   m_ObjectHideFlags: 0
