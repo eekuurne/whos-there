@@ -9,6 +9,7 @@ public class HomeManager : MonoBehaviour
     [SerializeField] GameObject UI;
     [SerializeField] Player kid;
     [SerializeField] MeshRenderer[] stairCollidersMeshRenderers;
+    [SerializeField] Hand hand;
 
     [SerializeField] float TimeBeforeFirstMonster = 1f;
     [SerializeField] float TimeBetweenMonstersBeginning = 10f;
@@ -111,6 +112,7 @@ public class HomeManager : MonoBehaviour
     IEnumerator StartGeneratingMonsters()
     {
         yield return new WaitForSecondsRealtime(TimeBeforeFirstMonster);
+        hand.PullFingerGun();
         monsterGenerator.StartGeneratingMonsters();
     }
 
@@ -140,7 +142,7 @@ public class HomeManager : MonoBehaviour
         Rigidbody rbHead = ragdoll.head.GetComponent<Rigidbody>();
         Rigidbody rbSpine = ragdoll.spine.GetComponent<Rigidbody>();
         Vector3 forceDirection = (victim.transform.position - attacker.position + Vector3.up).normalized;
-        rbHead.AddForce(forceDirection * 100);
+        //rbHead.AddForce(forceDirection * 100);
 
         StartCoroutine(ApplyForce(0.25f, rbSpine, 150, forceDirection, victim));
     }
