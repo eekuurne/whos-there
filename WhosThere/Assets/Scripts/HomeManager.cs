@@ -8,6 +8,7 @@ public class HomeManager : MonoBehaviour
     [SerializeField] GameObject Monsters;
     [SerializeField] GameObject UI;
     [SerializeField] Player kid;
+    [SerializeField] MeshRenderer[] stairCollidersMeshRenderers;
 
     [SerializeField] float TimeBeforeFirstMonster = 1f;
     [SerializeField] float TimeBetweenMonstersBeginning = 10f;
@@ -28,6 +29,12 @@ public class HomeManager : MonoBehaviour
         startGeneratingMonsters = StartGeneratingMonsters();
         sessionTimer = SessionTimer();
         StartGame();
+    }
+
+    void HideStairColliders() {
+        for (int i = 0; i < stairCollidersMeshRenderers.Length; i++) {
+            stairCollidersMeshRenderers[i].enabled = false;
+        }
     }
 
     void StartGame()
