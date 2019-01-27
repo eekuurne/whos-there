@@ -16,6 +16,7 @@ public class OverlayMenuUI : MonoBehaviour
         Cursor.visible = true;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             gameObject.SetActive(false);
             hm.ResumeGame(); 

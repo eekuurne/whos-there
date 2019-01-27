@@ -22,10 +22,14 @@ public class Player : Character {
     bool m_cursorIsLocked = true;
     Rigidbody rb;
 
+    AudioSource Sound;
+    public AudioClip[] Aw;
+
     void Start() {
         rb = GetComponent<Rigidbody>();
         characterTargetRotation = transform.localRotation;
         cameraTargetRotation = playerCamera.localRotation;
+        Sound = gameObject.AddComponent<AudioSource>();
         m_cursorIsLocked = lockCursor;
         InternalLockUpdate();
         InitCharacter();
@@ -39,6 +43,18 @@ public class Player : Character {
         }
         if (Input.GetKeyDown(KeyCode.Mouse1)) {
             hand.HandPush();
+        }
+    }
+
+    public override void TakeDamage(int damage, Transform attacker)
+    {
+        Sound.clip = Aw[Random.Range(0, Aw.Length)];
+        Sound.Play( );
+        healthRemaining -= damage;
+        Debug.Log("Hit character. Health remaining: " + healthRemaining);
+        if (healthRemaining <= 0 && !dead)
+        {
+            Die(attacker);
         }
     }
 

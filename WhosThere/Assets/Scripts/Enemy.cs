@@ -16,11 +16,15 @@ public class Enemy : Character {
     float attackCooldown = 2f;
     float nextAttack;
 
+    AudioSource Sound;
+    public AudioClip[] Hitted;
+
     void Start() {
         characterAnimation = GetComponent<CharacterAnimation>();
         moveTarget = FindObjectOfType<Player>().gameObject;
         InitNavMeshAgent();
         InitCharacter();
+        Sound = gameObject.AddComponent<AudioSource>();
         //attackLoop = AttackLoop();
         //StartCoroutine(attackLoop);
         nextAttack = Time.time;
@@ -42,6 +46,9 @@ public class Enemy : Character {
 
     public override void TakeDamage(int damage, Transform attacker)
     {
+        Sound.clip = Hitted[UnityEngine.Random.Range(0, Hitted.Length)];
+        Sound.Play();
+
         healthRemaining -= damage;
         Debug.Log("Hit character. Health remaining: " + healthRemaining);
         if (healthRemaining <= 0 && !dead) {
@@ -53,7 +60,7 @@ public class Enemy : Character {
         }
     }
 
-    IEnumerator ApplyPoke(float duration, Rigidbody target, float forceAmount, Vector3 forceDirection, Transform victim)
+    public IEnumerator ApplyPoke(float duration, Rigidbody target, float forceAmount, Vector3 forceDirection, Transform victim)
     {
         float startTime = Time.time;
         while (Time.time < startTime + duration)

@@ -827,10 +827,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
+  PokeTime: 0.5
+  CharacterModel: {fileID: 0}
   moveTarget: {fileID: 0}
   ragdollPrefab: {fileID: 1874472609627337408, guid: fcf1c3b0b687247e8bc1699300a30449,
     type: 3}
   AttackRange: 1.5
+  Hitted:
+  - {fileID: 8300000, guid: 2aeb3785bd0f7440096da819b1b351a6, type: 3}
+  - {fileID: 8300000, guid: be8d1da771e8b4084a6d6c3efd75ab56, type: 3}
+  - {fileID: 8300000, guid: 8049e58a0fcf74b6ebf14480e942230c, type: 3}
 --- !u!54 &1675805789
 Rigidbody:
   m_ObjectHideFlags: 0
