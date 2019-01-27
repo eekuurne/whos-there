@@ -149,19 +149,5 @@ public class HomeManager : MonoBehaviour
             target.AddForce(forceDirection * forceAmount * Time.deltaTime * 35);
             yield return null;
         }
-        StartCoroutine(FadeoutEnemy(2f, victim));
-    }
-
-    IEnumerator FadeoutEnemy(float duration, Transform victim) {
-        RagdollCorpse victimRagdoll = victim.GetComponent<RagdollCorpse>();
-        float startTime = Time.time;
-        while (Time.time < startTime + duration) {
-            victimRagdoll.ChangeToFadeMaterial();
-            Color color = victimRagdoll.fadeMaterial.color;
-            color.a = Mathf.Lerp(color.a, 0, Time.deltaTime * 5);
-            victimRagdoll.fadeMaterial.color = color;
-            yield return null;
-        }
-        Destroy(victim.gameObject);
     }
 }

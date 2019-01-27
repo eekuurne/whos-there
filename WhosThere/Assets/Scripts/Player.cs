@@ -35,7 +35,10 @@ public class Player : Character {
         LookRotation();
 
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            Shoot();
+            hand.Shoot();
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1)) {
+            hand.HandPush();
         }
     }
 
@@ -98,9 +101,5 @@ public class Player : Character {
         q.x = Mathf.Tan(0.5f * Mathf.Deg2Rad * angleX);
 
         return q;
-    }
-
-    void Shoot() {
-        hand.Shoot();
     }
 }
