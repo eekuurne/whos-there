@@ -43,6 +43,7 @@ public class HomeManager : MonoBehaviour
         sound.volume = 0.5f;
         sound.loop = true;
         sound.playOnAwake = true;
+        sound.Play();
         GameSessionTime =  GameSessionTime * 1.01f;
         monsterGenerator = Monsters.GetComponent<MonsterGenerator>();
         startGeneratingMonsters = StartGeneratingMonsters();

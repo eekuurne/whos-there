@@ -35,12 +35,11 @@ public class Hand : MonoBehaviour {
     }
 
     public void Shoot() {
-        sound.clip = Pew[UnityEngine.Random.Range(0, Pew.Length)];
-        sound.Play();
-
         if (Time.time < nextAttackTime) {
             return;
         }
+        sound.clip = Pew[UnityEngine.Random.Range(0, Pew.Length)];
+        sound.Play();
         nextAttackTime = Time.time + attackCooldown;
         anim.Play("FPS_Hands_Weapon_Shoot");
         // Layermask for layers 10 ("HitboxCollider") and 13 ("BreakableObject")
@@ -60,6 +59,7 @@ public class Hand : MonoBehaviour {
 
     public void HandPush() {
         Debug.Log("Hand push!");
+        anim.Play("FPS_Hands_Shield_Up");
         // Layermask for layers 10 ("HitboxCollider") and 13 ("BreakableObject")
         int layerMask = (1 << 10) | (1 << 13);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -76,7 +76,7 @@ public class Hand : MonoBehaviour {
             {
                 // Play bullet hitting enemy sound
                 Vector3 forceDirection = (damageableObject.transform.position - owner.transform.position + Vector3.up).normalized;
-                StartCoroutine(damageableObject.ApplyPoke(0.25f, damageableObject.GetComponent<Rigidbody>(), 500, forceDirection, damageableObject.transform));
+                StartCoroutine(damageableObject.ApplyPoke(0.25f, damageableObject.GetComponent<Rigidbody>(), 1000, forceDirection, damageableObject.transform));
 
             }
             else if (damageableObject != null && collider.transform.gameObject.layer == 13)

@@ -157,8 +157,8 @@ ModelImporter:
     - serializedVersion: 16
       name: FPS_Hands_Shield_Up
       takeName: Kid_FPS_Hands_Animations_06
-      firstFrame: 63
-      lastFrame: 137
+      firstFrame: 88
+      lastFrame: 102
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

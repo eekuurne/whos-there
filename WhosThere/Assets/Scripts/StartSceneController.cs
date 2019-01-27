@@ -16,6 +16,12 @@ public class StartSceneController : MonoBehaviour
         PlayAudio();
     }
 
+    void Update() {
+        if (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Space)) {
+            Initiate.Fade("HomeScene", Color.white, 2.0f);
+        }    
+    }
+
 
     IEnumerator SwitchScene()
     {
