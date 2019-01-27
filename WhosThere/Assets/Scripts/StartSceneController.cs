@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class StartSceneController : MonoBehaviour
 {
-    public float scenePause = 10f;
+    public float sceneDisplayTime = 30f;
     public float audioDelay = 0.5f;
     public new AudioSource audio;
 
@@ -19,7 +19,7 @@ public class StartSceneController : MonoBehaviour
 
     IEnumerator SwitchScene()
     {
-        yield return new WaitForSeconds(scenePause);
+        yield return new WaitForSeconds(sceneDisplayTime);
         Initiate.Fade("HomeScene", Color.white, 2.0f);
     }
 
