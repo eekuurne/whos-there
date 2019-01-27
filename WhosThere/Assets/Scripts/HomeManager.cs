@@ -29,6 +29,8 @@ public class HomeManager : MonoBehaviour
 
     public AudioClip ThemeMusic;
     public AudioClip Monster_Death;
+    public AudioClip Monster_Spawn;
+    public AudioClip WinSound;
     AudioSource sound;
     AudioSource effect;
 
@@ -110,6 +112,8 @@ public class HomeManager : MonoBehaviour
                 } 
         }
         StopGame();
+        effect.clip = WinSound;
+        effect.Play();
         Debug.Log("TIME IS UP");
         Debug.Log("YOU WON");
         Debug.Log("RESTART THE GAME BY PRESSING R");
@@ -124,6 +128,7 @@ public class HomeManager : MonoBehaviour
     IEnumerator StartGeneratingMonsters()
     {
         yield return new WaitForSecondsRealtime(TimeBeforeFirstMonster);
+        PlayEnemySpawnSound();
         hand.PullFingerGun();
         monsterGenerator.StartGeneratingMonsters();
     }
@@ -146,6 +151,11 @@ public class HomeManager : MonoBehaviour
             Debug.Log("P PRESSED");
             ResumeGame();
         }
+    }
+
+    public void PlayEnemySpawnSound() {
+        effect.clip = Monster_Spawn;
+        effect.Play();
     }
 
     public void EnemyDies(Transform victim, Transform attacker, RagdollCorpse ragdollPrefab) {

@@ -10,6 +10,7 @@ public class MonsterGenerator : MonoBehaviour
     public GameObject player;
 
     float timeBetweenMonsters;
+    HomeManager homeManager;
 
     IEnumerator coroutine;
 
@@ -17,6 +18,7 @@ public class MonsterGenerator : MonoBehaviour
     void Start()
     {
         coroutine = MonsterLoop();
+        homeManager = FindObjectOfType<HomeManager>();
     }
 
     public void StartGeneratingMonsters()

@@ -1971,7 +1971,7 @@ PrefabInstance:
     - target: {fileID: 6848613655248475998, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
         type: 3}
       propertyPath: TimeBetweenMonstersEnd
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6848613655248475998, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
         type: 3}
@@ -1981,7 +1981,7 @@ PrefabInstance:
     - target: {fileID: 6848613655248475998, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
         type: 3}
       propertyPath: TimeBetweenMonstersBeginning
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6848613655248475998, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
         type: 3}
@@ -2023,6 +2023,16 @@ PrefabInstance:
       propertyPath: ThemeMusic
       value: 
       objectReference: {fileID: 8300000, guid: 5820efa1145f143b7984d8f82b16ad5c, type: 3}
+    - target: {fileID: 6848613655248475998, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: Monster_Spawn
+      value: 
+      objectReference: {fileID: 8300000, guid: e13bdb1c51ffc4e22a56f9229c296b27, type: 3}
+    - target: {fileID: 6848613655248475998, guid: d2181ca60899b4ec4a5bc0d4eff577d9,
+        type: 3}
+      propertyPath: WinSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 95729ad8107d74c908c1c14072ba3907, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2181ca60899b4ec4a5bc0d4eff577d9, type: 3}
 --- !u!1001 &471191166
@@ -13540,6 +13550,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 136610228959758803, guid: ebd82dd4a4357464cbeab1e5e8808fdd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.8999603
+      objectReference: {fileID: 0}
     - target: {fileID: 136610229880668519, guid: ebd82dd4a4357464cbeab1e5e8808fdd,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -13549,6 +13564,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136610229364219237, guid: ebd82dd4a4357464cbeab1e5e8808fdd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.57828
+      objectReference: {fileID: 0}
+    - target: {fileID: 136610229364219237, guid: ebd82dd4a4357464cbeab1e5e8808fdd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.57828
+      objectReference: {fileID: 0}
+    - target: {fileID: 136610229364219237, guid: ebd82dd4a4357464cbeab1e5e8808fdd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.57828
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebd82dd4a4357464cbeab1e5e8808fdd, type: 3}
