@@ -10,6 +10,9 @@ public class Hand : MonoBehaviour {
 
     [SerializeField] int shootingDamage = 1;
 
+    public AudioClip[] Pew;
+    AudioSource sound;
+
     Animator anim;
     bool weaponUp = false;
 
@@ -17,6 +20,7 @@ public class Hand : MonoBehaviour {
     float attackCooldown = 0.66f;
 
     void Start() {
+        sound = gameObject.AddComponent<AudioSource>();
         anim = GetComponent<Animator>();
         nextAttackTime = Time.time;
     }
@@ -31,6 +35,9 @@ public class Hand : MonoBehaviour {
     }
 
     public void Shoot() {
+        sound.clip = Pew[UnityEngine.Random.Range(0, Pew.Length)];
+        sound.Play();
+
         if (Time.time < nextAttackTime) {
             return;
         }
