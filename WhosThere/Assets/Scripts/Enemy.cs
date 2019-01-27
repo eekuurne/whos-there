@@ -7,6 +7,7 @@ public class Enemy : Character {
 
     public UnityEngine.AI.NavMeshAgent agent { get; private set; }
     public CharacterAnimation characterAnimation { get; private set; }
+    public float PokeTime = 0.5f;
 
     public GameObject moveTarget;
     public RagdollCorpse ragdollCorpse;
@@ -39,7 +40,6 @@ public class Enemy : Character {
             StartCoroutine(MeleeAttack(1f));
         }
     }
-
     IEnumerator AttackLoop()
     {
         while(true)
