@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 
 
     [SerializeField] Text timerText;
-    readonly int secondsLimit = 5;
+    readonly int secondsLimit = 300;
     readonly int startingHour = 17;
 
     float startingTime;

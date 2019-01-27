@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartSceneSubtitles : MonoBehaviour
 {
     public float letterPause = 0.1f;
-    public AudioClip typeSound1;
-    public AudioClip typeSound2;
 
     string message;
     Text textComp;
