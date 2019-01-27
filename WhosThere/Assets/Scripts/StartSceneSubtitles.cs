@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartSceneSubtitles : MonoBehaviour
 {
     public float letterPause = 0.1f;
+    public float initialPause = 1f;
 
     string message;
     Text textComp;
@@ -22,6 +22,7 @@ public class StartSceneSubtitles : MonoBehaviour
 
     IEnumerator TypeText()
     {
+        yield return new WaitForSecondsRealtime(initialPause);
         foreach (char letter in message.ToCharArray())
         {
             textComp.text += letter;

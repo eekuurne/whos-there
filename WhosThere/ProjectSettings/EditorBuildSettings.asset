@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneWithOverlay.unity
     guid: 8c60cbae044908d4ebfc63346020e34f
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 6984ac119c3ff4d51a7a814ffcccb349
+  - enabled: 1
+    path: Assets/Scenes/HomeScene.unity
+    guid: 91ec5cf62cd064ff0879226f9edbbc4b
   m_configObjects: {}
