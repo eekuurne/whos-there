@@ -10,7 +10,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: bed
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bedshheet
+    second: {fileID: 2100000, guid: 6b3abf918d06e46ae9445cef27bb8144, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: woodframe
+    second: {fileID: 2100000, guid: 674cecfeb29ae46a5a6cf2b0e3acb8fa, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

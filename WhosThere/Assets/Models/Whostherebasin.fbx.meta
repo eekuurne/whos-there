@@ -11,7 +11,22 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: bathbasin
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bedshheet
+    second: {fileID: 2100000, guid: bf84143717f0846c09384cf8ae5aec92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: abf4361d25a564e64862508dd4d4cdac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: woodframe
+    second: {fileID: 2100000, guid: 674cecfeb29ae46a5a6cf2b0e3acb8fa, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

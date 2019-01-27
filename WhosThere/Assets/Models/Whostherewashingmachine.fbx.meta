@@ -10,7 +10,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: washingmachine
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: abf4361d25a564e64862508dd4d4cdac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: washingmachine
+    second: {fileID: 2100000, guid: 2a467cad6115b402283334f62ba2492c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
