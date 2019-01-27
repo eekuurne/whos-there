@@ -18,6 +18,7 @@ public class Enemy : Character {
 
     AudioSource Sound;
     public AudioClip[] Hitted;
+    public AudioClip Monster_Death;
 
     void Start() {
         characterAnimation = GetComponent<CharacterAnimation>();
@@ -132,6 +133,7 @@ public class Enemy : Character {
     }
 
     public override void Die(Transform attacker) {
+
         dead = true;
         FindObjectOfType<HomeManager>().EnemyDies(transform, attacker, ragdollPrefab);
     }

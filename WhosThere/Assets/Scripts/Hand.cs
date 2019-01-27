@@ -10,7 +10,17 @@ public class Hand : MonoBehaviour {
 
     [SerializeField] int shootingDamage = 1;
 
+    AudioSource Sound;
+    public AudioClip[] Pew;
+
+    private void Awake()
+    {
+        Sound = gameObject.AddComponent<AudioSource>();
+    }
+
     public void Shoot() {
+        Sound.clip = Pew[UnityEngine.Random.Range(0, Pew.Length)];
+        Sound.Play();
         // Layermask for layers 10 ("HitboxCollider") and 13 ("BreakableObject")
         int layerMask = (1 << 10) | (1 << 13);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
