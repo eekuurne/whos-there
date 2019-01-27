@@ -42,15 +42,14 @@ public class Enemy : Character {
 
     public override void TakeDamage(int damage, Transform attacker)
     {
-        Vector3 forceDirection = (transform.position - attacker.position + Vector3.up).normalized;
-        GetComponent<Rigidbody>().AddForce(forceDirection * 1200);
-        StartCoroutine(ApplyPoke(0.25f, GetComponent<Rigidbody>(), 500, forceDirection, transform));
-
         healthRemaining -= damage;
         Debug.Log("Hit character. Health remaining: " + healthRemaining);
-        if (healthRemaining <= 0 && !dead)
-        {
+        if (healthRemaining <= 0 && !dead) {
             Die(attacker);
+        } else {
+            Vector3 forceDirection = (transform.position - attacker.position + Vector3.up).normalized;
+            GetComponent<Rigidbody>().AddForce(forceDirection * 1200);
+            StartCoroutine(ApplyPoke(0.25f, GetComponent<Rigidbody>(), 500, forceDirection, transform));
         }
     }
 

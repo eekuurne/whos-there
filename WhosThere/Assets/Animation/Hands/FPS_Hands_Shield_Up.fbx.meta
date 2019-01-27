@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: 1feaa9f5355370b46b0eb4f4d7b9212f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Arm_Clavicle_L1
+    100002: Arm_Clavicle_R1
+    100004: Arm_Fore_L1
+    100006: Arm_Fore_R1
+    100008: Arm_Upper_L1
+    100010: Arm_Upper_R1
+    100012: Finger_Index_L_1
+    100014: Finger_Index_L_2
+    100016: Finger_Index_L_3
+    100018: Finger_Index_L_4
+    100020: Finger_Index_R_1
+    100022: Finger_Index_R_2
+    100024: Finger_Index_R_3
+    100026: Finger_Index_R_4
+    100028: Finger_Mid_L_1
+    100030: Finger_Mid_L_2
+    100032: Finger_Mid_L_3
+    100034: Finger_Mid_L_4
+    100036: Finger_Mid_R_1
+    100038: Finger_Mid_R_2
+    100040: Finger_Mid_R_3
+    100042: Finger_Mid_R_4
+    100044: Finger_Pinky_L_1
+    100046: Finger_Pinky_L_2
+    100048: Finger_Pinky_L_3
+    100050: Finger_Pinky_L_4
+    100052: Finger_Pinky_R_1
+    100054: Finger_Pinky_R_2
+    100056: Finger_Pinky_R_3
+    100058: Finger_Pinky_R_4
+    100060: Finger_Ring_L_1
+    100062: Finger_Ring_L_2
+    100064: Finger_Ring_L_3
+    100066: Finger_Ring_L_4
+    100068: Finger_Ring_R_1
+    100070: Finger_Ring_R_2
+    100072: Finger_Ring_R_3
+    100074: Finger_Ring_R_4
+    100076: Finger_Thumb_L_1
+    100078: Finger_Thumb_L_2
+    100080: Finger_Thumb_L_3
+    100082: Finger_Thumb_L_4
+    100084: Finger_Thumb_R_1
+    100086: Finger_Thumb_R_2
+    100088: Finger_Thumb_R_3
+    100090: Finger_Thumb_R_4
+    100092: FPS_Hand_Bones
+    100094: FPS_HANDS
+    100096: //RootNode
+    100098: Palm_L
+    100100: Palm_L_CTRL
+    100102: Palm_L_Nub
+    100104: Palm_R
+    100106: Palm_R_CTRL
+    100108: Palm_R_Nub
+    100110: Spine
+    100112: Spine1
+    100114: Spine2
+    100116: Spine3
+    400000: Arm_Clavicle_L1
+    400002: Arm_Clavicle_R1
+    400004: Arm_Fore_L1
+    400006: Arm_Fore_R1
+    400008: Arm_Upper_L1
+    400010: Arm_Upper_R1
+    400012: Finger_Index_L_1
+    400014: Finger_Index_L_2
+    400016: Finger_Index_L_3
+    400018: Finger_Index_L_4
+    400020: Finger_Index_R_1
+    400022: Finger_Index_R_2
+    400024: Finger_Index_R_3
+    400026: Finger_Index_R_4
+    400028: Finger_Mid_L_1
+    400030: Finger_Mid_L_2
+    400032: Finger_Mid_L_3
+    400034: Finger_Mid_L_4
+    400036: Finger_Mid_R_1
+    400038: Finger_Mid_R_2
+    400040: Finger_Mid_R_3
+    400042: Finger_Mid_R_4
+    400044: Finger_Pinky_L_1
+    400046: Finger_Pinky_L_2
+    400048: Finger_Pinky_L_3
+    400050: Finger_Pinky_L_4
+    400052: Finger_Pinky_R_1
+    400054: Finger_Pinky_R_2
+    400056: Finger_Pinky_R_3
+    400058: Finger_Pinky_R_4
+    400060: Finger_Ring_L_1
+    400062: Finger_Ring_L_2
+    400064: Finger_Ring_L_3
+    400066: Finger_Ring_L_4
+    400068: Finger_Ring_R_1
+    400070: Finger_Ring_R_2
+    400072: Finger_Ring_R_3
+    400074: Finger_Ring_R_4
+    400076: Finger_Thumb_L_1
+    400078: Finger_Thumb_L_2
+    400080: Finger_Thumb_L_3
+    400082: Finger_Thumb_L_4
+    400084: Finger_Thumb_R_1
+    400086: Finger_Thumb_R_2
+    400088: Finger_Thumb_R_3
+    400090: Finger_Thumb_R_4
+    400092: FPS_Hand_Bones
+    400094: FPS_HANDS
+    400096: //RootNode
+    400098: Palm_L
+    400100: Palm_L_CTRL
+    400102: Palm_L_Nub
+    400104: Palm_R
+    400106: Palm_R_CTRL
+    400108: Palm_R_Nub
+    400110: Spine
+    400112: Spine1
+    400114: Spine2
+    400116: Spine3
+    2100000: Cloth_Apps_01_aiStandardSkin
+    4300000: FPS_HANDS
+    7400000: FPS_Hands_Shield_Up
+    9500000: //RootNode
+    13700000: FPS_HANDS
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: FPS_Hands_Shield_Up
+      takeName: Kid_FPS_Hands_Animations_06
+      firstFrame: 63
+      lastFrame: 137
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.099999994
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -9,7 +9,32 @@ public class Hand : MonoBehaviour {
 
     [SerializeField] int shootingDamage = 1;
 
+    Animator anim;
+    bool weaponUp = false;
+
+    float nextAttackTime;
+    float attackCooldown = 0.66f;
+
+    void Start() {
+        anim = GetComponent<Animator>();
+        nextAttackTime = Time.time;
+    }
+
+    public void PullFingerGun() {
+        weaponUp = true;
+    }
+
+    void Update() {
+        anim.SetBool("WeaponUp", weaponUp);
+        anim.speed = 1;
+    }
+
     public void Shoot() {
+        if (Time.time < nextAttackTime) {
+            return;
+        }
+        nextAttackTime = Time.time + attackCooldown;
+        anim.Play("FPS_Hands_Weapon_Shoot");
         // Layermask for layers 10 ("HitboxCollider") and 13 ("BreakableObject")
         int layerMask = (1 << 10) | (1 << 13);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
